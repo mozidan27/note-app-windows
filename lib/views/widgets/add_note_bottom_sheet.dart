@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:note_app/views/widgets/custom_bottom.dart';
 import 'package:note_app/views/widgets/custom_text_field.dart';
 
 class AddNoteBottomSheet extends StatelessWidget {
@@ -23,6 +24,10 @@ class AddNoteBottomSheet extends StatelessWidget {
             hint: 'Content',
             maxLines: 5,
           ),
+          SizedBox(
+            height: 40,
+          ),
+          CustomButtom()
         ],
       ),
     );
