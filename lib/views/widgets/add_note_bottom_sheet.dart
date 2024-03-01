@@ -5,8 +5,8 @@ import 'package:note_app/cubits/add_note_cubit/cubit/add_note_cubit.dart';
 import 'package:note_app/views/widgets/add_note_form.dart';
 
 class AddNoteBottomSheet extends StatelessWidget {
-  const AddNoteBottomSheet({super.key});
-
+  AddNoteBottomSheet({super.key});
+  bool isLoading = false;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -15,7 +15,8 @@ class AddNoteBottomSheet extends StatelessWidget {
         listener: (context, state) {},
         builder: (context, state) {
           return ModalProgressHUD(
-            inAsyncCall:  , child: const AddNoteForm());
+              inAsyncCall: state is AddNoteLoading ? true : false,
+              child: const AddNoteForm());
         },
       ),
     );
